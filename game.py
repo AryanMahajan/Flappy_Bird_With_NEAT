@@ -2,7 +2,7 @@ import pygame
 import random
 import os
 import time
-import neat
+import neat         #NEAT NeuroEvolution of Augmenting Topologies
 import pickle
 pygame.font.init()  # init font
 
@@ -93,7 +93,6 @@ class Bird:
     def get_mask(self):
         return pygame.mask.from_surface(self.img)
 
-
 class Pipe():
     GAP = 200
     VEL = 5
@@ -165,7 +164,6 @@ class Base:
     def draw(self, win):
         win.blit(self.IMG, (self.x1, self.y))
         win.blit(self.IMG, (self.x2, self.y))
-
 
 def blitRotateCenter(surf, image, topleft, angle):
     rotated_image = pygame.transform.rotate(image, angle)

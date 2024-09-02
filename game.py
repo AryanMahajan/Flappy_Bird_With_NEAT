@@ -11,7 +11,6 @@ WIN_HEIGHT = 800
 FLOOR = 730
 STAT_FONT = pygame.font.SysFont("comicsans", 50)
 END_FONT = pygame.font.SysFont("comicsans", 70)
-DRAW_LINES = False
 
 WIN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("Flappy Bird")
@@ -184,14 +183,6 @@ def draw_window(win, birds, pipes, base, score, gen, pipe_ind):
 
     base.draw(win)
     for bird in birds:
-        # draw lines from bird to pipe
-        if DRAW_LINES:
-            try:
-                pygame.draw.line(win, (255,0,0), (bird.x+bird.img.get_width()/2, bird.y + bird.img.get_height()/2), (pipes[pipe_ind].x + pipes[pipe_ind].PIPE_TOP.get_width()/2, pipes[pipe_ind].height), 5)
-                pygame.draw.line(win, (255,0,0), (bird.x+bird.img.get_width()/2, bird.y + bird.img.get_height()/2), (pipes[pipe_ind].x + pipes[pipe_ind].PIPE_BOTTOM.get_width()/2, pipes[pipe_ind].bottom), 5)
-            except:
-                pass
-        # draw bird
         bird.draw(win)
 
     # score

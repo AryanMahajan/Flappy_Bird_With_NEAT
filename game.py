@@ -209,7 +209,7 @@ def eval_genomes(genomes, config):
     nets = []
     birds = []
     ge = []
-    for genome_id, genome in genomes:
+    for _, genome in genomes:
         genome.fitness = 0  # start with fitness level of 0
         net = neat.nn.FeedForwardNetwork.create(genome, config)
         nets.append(net)
